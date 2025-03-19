@@ -21,7 +21,7 @@ const CreatePlaylist = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8000/create-playlist", {
+      const response = await fetch("https://music-time-machine.onrender.com/create-playlist", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
