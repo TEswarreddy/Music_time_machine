@@ -5,8 +5,8 @@ import { fadeIn, textVariant } from "../utils/motion";
 
 const CreatePlaylist = () => {
   const [form, setForm] = useState({
-    email: "",
-    password: "",
+    CLIENT_ID: "",
+    CLIENT_SECRET: "",
     date: "",
   });
 
@@ -21,7 +21,7 @@ const CreatePlaylist = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/create-playlist", {
+      const response = await fetch("http://localhost:8000/create-playlist", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -61,20 +61,20 @@ const CreatePlaylist = () => {
         className="flex flex-col gap-4 w-full"
       >
         <input
-          type="email"
-          name="email"
-          value={form.email}
+          type="CLIENT_ID"
+          name="CLIENT_ID"
+          value={form.CLIENT_ID}
           onChange={handleChange}
-          placeholder="Email"
+          placeholder="CLIENT_ID"
           className="p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-400"
           required
         />
         <input
-          type="password"
-          name="password"
-          value={form.password}
+          type="CLIENT_SECRET"
+          name="CLIENT_SECRET"
+          value={form.CLIENT_SECRET}
           onChange={handleChange}
-          placeholder="Password"
+          placeholder="CLIENT_SECRET"
           className="p-3 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-400"
           required
         />
